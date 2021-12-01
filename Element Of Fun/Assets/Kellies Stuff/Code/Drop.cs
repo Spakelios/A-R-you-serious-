@@ -9,7 +9,7 @@ public class Drop : MonoBehaviour
     private void OnTriggerEnter(Collider other)
 
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Ball"))
         {
             ScoreManager.instance.ChangeScore(dropValue);
         }
