@@ -10,11 +10,10 @@ public class ScoreManager : MonoBehaviour
     public static ScoreManager instance;
     public TextMeshProUGUI Scoretext;
     public TextMeshProUGUI highscoreText;
-    public TextMeshProUGUI inventoryText;
-
+    
     private int score = 0;
-    private int highscore = 100;
-    private int balls = 1;
+    private int highscore = 25;
+    
 
 
     void Start()
@@ -26,7 +25,7 @@ public class ScoreManager : MonoBehaviour
 
         Scoretext.text = score.ToString() + " POINTS";
         highscoreText.text = "HIGHSCORE: " + highscore.ToString();
-        inventoryText.text = "BALLS REMAINING: " + balls.ToString();
+        
 
     }
 
@@ -34,5 +33,10 @@ public class ScoreManager : MonoBehaviour
     {
         score += dropValue;
         Scoretext.text = score.ToString() + " POINTS";
+
+        if (score >= 25)
+        {
+            highscoreText.text = "HIGHSCORE " + score.ToString();
+        }
     }
 }
