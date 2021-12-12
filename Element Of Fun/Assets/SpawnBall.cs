@@ -7,7 +7,7 @@ public class SpawnBall : MonoBehaviour
     public GameObject balltothrow;
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("RH"))
+        if (other.gameObject.CompareTag("Ball"))
         {
             Debug.Log("itworked");
             Instantiate(balltothrow, new Vector3(-2, 13, -215), Quaternion.identity);
