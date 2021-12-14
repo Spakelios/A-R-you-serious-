@@ -10,11 +10,16 @@ TagManager:
   - Ball
   - first
   - secound
+  - Target
+  - Bullet
+  - System
+  - IceExplosion
+  - FireExplosion
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Bullet
   - Water
   - UI
   - Grab
