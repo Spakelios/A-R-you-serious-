@@ -1368,7 +1368,7 @@ MonoBehaviour:
   m_InteractionLayers:
     m_Bits: 1
   m_SelectMode: 1
-  m_CustomReticle: {fileID: 0}
+  m_CustomReticle: {fileID: 456346524}
   m_FirstHoverEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -1832,6 +1832,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1615422898052514352, guid: 8dbdfdacf2f10ac4995c5a7eec1da97e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432499110221154297, guid: 8dbdfdacf2f10ac4995c5a7eec1da97e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2659240668617427067, guid: 8dbdfdacf2f10ac4995c5a7eec1da97e,
         type: 3}
       propertyPath: m_LocalPosition.z

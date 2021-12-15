@@ -11,7 +11,7 @@ public class SystematicType : MonoBehaviour
     public TargetMovement SpeedScript;
     public float Type;
 
-    private void OnTriggerEnter(Collider collider)
+    private void OnTriggerStay(Collider collider)
     {
         if (collider.gameObject.CompareTag("System"))
         {
@@ -34,34 +34,43 @@ public class SystematicType : MonoBehaviour
            
         }
     }
-    private void OnTriggerExit(Collider collider)
-    {
-        if (collider.gameObject.CompareTag("System"))
-        {
-            CollidedObject = collider.gameObject;
-
-            SpeedScript = CollidedObject.GetComponent<TargetMovement>();
-            Script = CollidedObject.GetComponent<SystematicType>();
-
-            if (Script.Type == 0)
-            {
-                Script.Type = Type;
-            }
-            if (Type == 0)
-            {
-                Type = Script.Type;
-            }
-            Script.Contact();
+   // private void OnTriggerExit(Collider collider)
+   // {
+   //     if (collider.gameObject.CompareTag("System"))
+   //     {
+   //         CollidedObject = collider.gameObject;
+   //
+   //         SpeedScript = CollidedObject.GetComponent<TargetMovement>();
+   //         Script = CollidedObject.GetComponent<SystematicType>();
+   //
+   //        if (Script.Type == 0)
+   //        {
+   //           Script.Type = Type;
+   //        }
+   //       if (Type == 0)
+   //       {
+   //           Type = Script.Type;
+   //       }
+   //  Script.Contact();
 
 
             
-        }
-    }
+    //    }
+//    }
 
     void Contact()
     {
         switch (Type)
         {
+
+            case 0:
+                if (Script.Type != 2)
+                {
+
+                    Destroy(gameObject);
+                    Destroy(CollidedObject);
+                } break;
+
             case 1:
                 if (Script.Type != 3)
                 {
@@ -90,19 +99,30 @@ public class SystematicType : MonoBehaviour
 
                 if (Script.Type == 2)
                 {
-                    Instantiate(IceExplosion,gameObject.transform);
+                    Instantiate(IceExplosion, gameObject.transform);
                 }
+                    if (Script.Type == 0) {
+                        Destroy(CollidedObject); }
                 break;
 
 
 
 
             default:
+                Destroy(CollidedObject);
                 break;
         }
 
         switch (Script.Type)
         {
+            case 0:
+               if (Type != 2)
+                {
+
+                    Destroy(gameObject);
+                Destroy(CollidedObject);
+                }
+            break;
             case 1:
                 if (Type != 3)
                 {
@@ -134,12 +154,18 @@ public class SystematicType : MonoBehaviour
                 {
                     Instantiate(IceExplosion, gameObject.transform);
                 }
+                if (Type == 0)
+                {
+                    Destroy(gameObject);
+                }
                 break;
 
 
 
 
             default:
+                Destroy(gameObject);
+                Destroy(CollidedObject);
                 break;
         }
 

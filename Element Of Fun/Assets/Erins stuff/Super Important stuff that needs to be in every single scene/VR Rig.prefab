@@ -776,7 +776,7 @@ MonoBehaviour:
   barrel: {fileID: 4405514162602918501}
   ShootCooldown: 15
   CurrentBullet: 0
-  lifetime: 10
+  lifetime: 5
 --- !u!1 &4405514163367008753
 GameObject:
   m_ObjectHideFlags: 0

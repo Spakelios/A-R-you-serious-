@@ -27,7 +27,7 @@ public class GameSpawner : MonoBehaviour
     {
 
         var position = new Vector3(Random.Range(x1, x2), Random.Range(y1, y2), Random.Range(z1, z2));
-        GameObject Target = Instantiate(target[Random.Range(0, 6)], position + SpawnPoint.position, Quaternion.identity);
+        GameObject Target = Instantiate(target[Random.Range(0, target.Length)], position + SpawnPoint.position, Quaternion.identity);
         Destroy(Target, Lifetime);
 
         yield return new WaitForSeconds(waittime);
